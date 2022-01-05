@@ -55,6 +55,12 @@ class FacebookApp implements \Serializable
         $this->id = (string) $id;
         $this->secret = $secret;
     }
+    
+    /**
+     *  PHP 8.1 requirements
+     */
+    public function __serialize(): array {}
+    public function __unserialize(array $data): void {}    
 
     /**
      * Returns the app ID.
